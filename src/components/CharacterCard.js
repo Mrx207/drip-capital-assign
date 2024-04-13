@@ -96,8 +96,8 @@ const CharacterCard = ({ characters, searchQuery }) => {
                 <span className="movies-sub-heading">Movies acted in:</span>{" "}
                 {movieNames[character.name] || "Loading..."}
               </div>
-              <div className="see-more">See more {">"}</div>
             </div>
+            <div className="see-more">See more {">"}</div>
           </div>
         ))}
         {selectedCharacter && (
