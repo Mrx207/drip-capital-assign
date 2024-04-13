@@ -1,0 +1,22 @@
+.character-details {
+  padding: 20px;
+}
+
+.details-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.label {
+  min-width: 120px;
+  font-weight: bold;
+}
+
+.value {
+  flex-grow: 1;
+}

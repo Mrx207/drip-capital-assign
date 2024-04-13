@@ -2,37 +2,212 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-section {
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-button {
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo-img {
+  width: 100px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.hero-img {
+  height: 50vh;
+  background: url("https://s3-alpha-sig.figma.com/img/18f5/d8da/f57ed6201324376785977be12e9d5b39?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=L~RrNqvNRV0dLjKDMrU5e277XPtcni5vE53qelEPyt2cI2-w3DPz5iOCsft0k8ZxxoHgxqX9MkQ56BNGqPexSdt03YC71HTa-Ol5UozeKXOVb1Y66QucCAeAnKKn13rboz49ZYllGlzHvYc0btt4XwqeXitp9zVfSqZISkzFbCs9GkK9ZiIDGU7ds8zBX~B2I4BqgeT-TUZhDfXm2KhfL0t7DJRdDoi6n5TSlOBQ4ZL0-ZgUNCtt-0Wzm1oNl3rX3LTtlow3FYAr9d1vS~JOuotPzJPkN4N1CI3HSAHbQFOqt9B6XXCyg8I3L0NKZHD6dGlxQtsb13q-OrCRmOqeCQ__");
+  background-size: cover;
+  background-position: center;
+}
+
+.search-section {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  left: 30%;
+}
+
+.search-input {
+  border-bottom-left-radius: 5px;
+  border: 0;
+  border-top-left-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.search-button {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #46e05d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Character Card */
+.characters-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character-card {
+  position: relative;
+  flex: 1 1 300px; /* Initially, display one card per row */
+  max-width: calc(50% - 20px);
+  border: 1px solid #6ab1e1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  height: 470px;
+  transition: all 0.3s ease-in-out; /* Add transition for smooth effect */
+  box-shadow: 0px 0px 0px 0px transparent;
+}
+
+.character-card:hover {
+  box-shadow: 0px 6px 12px 0px #0a2e5733;
+  opacity: 0.2;
+}
+
+.see-more {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Initially hide the "See More" text */
+  color: #29670b; /* Text color */
+  background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.character-card:hover .see-more {
+  display: block; /* Display the "See More" text on hover */
+}
+
+.character-img {
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.character-details {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.height-dob-section {
+  font-family: Nunito Sans;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 13.64px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #1355a1;
+}
+
+.char-content {
+  text-align: left;
+  font-family: Nunito Sans;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.char-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27.28px;
+  text-align: left;
+}
+
+.movies-sub-heading {
+  font-family: Nunito Sans;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.37px;
+  text-align: left;
+}
+
+.movies-list {
+  font-family: Nunito Sans;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.64px;
+  text-align: left;
+}
+
+@media (max-width: 810px) {
+  .character-card {
+    max-width: 100%;
+  }
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup button {
+  margin-top: 10px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.popup button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #1418ec;
+  border: 2px solid #0e0d0e;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
 }
